@@ -6,7 +6,7 @@
 #include "ir-sender.h"
 
 // IR SSENDER
-const uint16_t kIrLed = 4;              // M5StickCはGPIO9にIRが内蔵
+const uint16_t kIrLed = 2;              // M5StickCはGPIO9にIRが内蔵
 IRsend irsend(kIrLed);                  // IR送信を宣言
 
 void IrSender::setup() {
