@@ -1,0 +1,61 @@
+#include <FastLED.h>
+#include <leds.h>
+
+#define MATRIX_PIN 27
+
+CRGB _ledbuff[25];
+
+
+
+void Leds::setup(int ledPin) {
+  FastLED.addLeds<WS2812B, MATRIX_PIN, GRB>(_ledbuff, 25);
+
+  Serial.println("SETUP LEDS");
+
+  FastLED.setBrightness(20);
+  clear(true);
+  // ready();
+}
+
+
+void Leds::ready() {
+  // clear();
+
+  _ledbuff[2] = CRGB::Red;
+  _ledbuff[6] = CRGB::Blue;
+  _ledbuff[8] = CRGB::Green;
+  _ledbuff[10] = CRGB::Green;
+  _ledbuff[14] = CRGB::Green;
+  _ledbuff[16] = CRGB::Green;
+  _ledbuff[18] = CRGB::Green;
+  _ledbuff[22] = CRGB::Green;
+
+
+  FastLED.show();
+  FastLED.show();
+}
+
+void Leds::sad() {
+  clear();
+
+  _ledbuff[9] = CRGB::White;
+  _ledbuff[13] = CRGB::White;
+  _ledbuff[15] = CRGB::White;
+  _ledbuff[17] = CRGB::White;
+  _ledbuff[21] = CRGB::White;
+
+
+  FastLED.show();
+  // FastLED.setBrightness(20);
+}
+
+void Leds::clear() {
+  for (int i = 0; i < 25; i++) {
+    _ledbuff[i] = CRGB::Black;
+  }
+}
+
+void Leds::clear(bool forceUpdate) {
+  clear();
+  if(forceUpdate) FastLED.show();
+}

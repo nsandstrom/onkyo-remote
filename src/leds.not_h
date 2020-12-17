@@ -1,0 +1,19 @@
+#ifndef _LEDS_H
+#define _LEDS_H
+
+class Leds {
+public:
+
+  static void setup(int ledPin);
+
+  static void ready();
+
+  static void sad();
+
+private:
+  static void clear();
+  static void clear(bool forceUpdate);
+
+};
+
+#endif
