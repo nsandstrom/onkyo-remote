@@ -1,6 +1,7 @@
-class IrSender {
+class IrSender
+{
 public:
-	static void setup();
+  static void setup();
 
-	static void sendCode(unsigned long code);
+  static void sendCode(unsigned long code);
 };

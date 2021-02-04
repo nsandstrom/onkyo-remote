@@ -1,3 +1,3 @@
-#define MATRIX_PIN 27
-#define BUTTON_PIN 39
-#define IR_PIN 12
+#define IR_PIN 4
+
+#define QUEUE_TOPIC "onkyo/command" 
